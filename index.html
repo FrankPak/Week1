@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <h1 id="header">Hello World</h1>
+    <button id="my-button" onclick="HelloWorld()">clickme</button>
+    <button id="add-data" onclick="addDataUL()">add-data</button>
+    <ul id="arbitaryList"></ul>
+
+    <script>
+      function HelloWorld() {
+        console.log("hello world");
+        var x = document.getElementById("header");
+        x.innerHTML = "My notebook";
+      }
+
+      function addDataUL() {
+        var wordList = [
+          "coffee",
+          "latte",
+          "giraffe",
+          "sudoku",
+          "graham",
+          "elephant"
+        ];
+
+        var wordInt = Math.floor(Math.random() * wordList.length);
+
+        var Li = document.createElement("Li");
+        var text = document.createTextNode(wordList[wordInt]);
+
+        Li.appendChild(text);
+        document.getElementById("arbitaryList").appendChild(Li);
+      }
+    </script>
+  </body>
+</html>
