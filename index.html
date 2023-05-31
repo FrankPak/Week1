@@ -5,12 +5,13 @@
     <meta charset="UTF-8" />
   </head>
 
-  <body>
+<body>
     <div id="app"></div>
     <h1 id="header">Hello World</h1>
     <button id="my-button" onclick="HelloWorld()">clickme</button>
     <button id="add-data" onclick="addDataUL()">add-data</button>
     <ul id="arbitaryList"></ul>
+    <textarea id="mytextarea"></textarea>
 
     <script>
       function HelloWorld() {
@@ -20,19 +21,9 @@
       }
 
       function addDataUL() {
-        var wordList = [
-          "coffee",
-          "latte",
-          "giraffe",
-          "sudoku",
-          "graham",
-          "elephant"
-        ];
-
-        var wordInt = Math.floor(Math.random() * wordList.length);
-
+        var textAreaContent = document.getElementById("mytextarea").value;
         var Li = document.createElement("Li");
-        var text = document.createTextNode(wordList[wordInt]);
+        var text = document.createTextNode(textAreaContent);
 
         Li.appendChild(text);
         document.getElementById("arbitaryList").appendChild(Li);
